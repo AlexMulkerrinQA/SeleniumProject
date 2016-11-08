@@ -1,0 +1,25 @@
+version: '2'
+services:    
+  selenium-hub:
+    build: 
+      context: .
+      dockerfile: HubDockerfile
+    ports:
+      - "4444:4444"
+    tty: true
+
+  selenium-node:
+    build:
+      context: .
+      dockerfile: NodeDockerfile
+    depends_on:
+      - selenium-hub
+    ports:
+      - "5555:5555"
+    tty: true
+
+  selenium-firefox:
+    image: selenium/node-firefox
+    links: 
+      - "selenium-hub:hub"
+    tty: true
