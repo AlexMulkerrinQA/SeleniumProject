@@ -2,7 +2,7 @@
   "capabilities": [
     {
       "browserName": "firefox",
-      "maxInstances": $NODE_MAX_INSTANCES,
+      "maxInstances": 1,
       "seleniumProtocol": "WebDriver"
     }
   ],
