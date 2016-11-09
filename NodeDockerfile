@@ -2,8 +2,10 @@ FROM ubuntu
 MAINTAINER blubber:alex
 
 RUN apt-get update
-RUN apt-get install wget openjdk-8-jdk -y
-RUN wget -q  http://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar
+# adding Xvfb (X virtual frame buffer)
+RUN apt-get install wget openjdk-8-jdk xvfb -y
+RUN wget -q http://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar
+RUN wget -q https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
 COPY config.json /opt/selenium/
 
 EXPOSE 5555
