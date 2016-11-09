@@ -11,5 +11,5 @@ RUN wget -q -O /opt/geckodriver.tar.gz https://github.com/mozilla/geckodriver/re
 COPY config.json /opt/selenium/
 
 EXPOSE 5555
-ENTRYPOINT java -jar selenium-server-standalone-3.0.1.jar -role node -hub http://52.209.247.188:4444/grid/register -nodeConfig /opt/selenium/config.json -port 5555 && bash
+ENTRYPOINT java -jar selenium-server-standalone-3.0.1.jar -role node -hub http://52.208.235.49:4444/grid/register -nodeConfig /opt/selenium/config.json -port 5555 && bash
 
