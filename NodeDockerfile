@@ -13,5 +13,5 @@ COPY config.json /opt/selenium/
 
 ENV DISPLAY :1
 EXPOSE 5555
-ENTRYPOINT Xvfb :1 & java -jar selenium-server-standalone-3.0.1.jar -role node -hub http://selenium-hub:4444/grid/register -nodeConfig /opt/selenium/config.json -port 5555 && bash
+ENTRYPOINT Xvfb :1 & java -jar selenium-server-standalone-3.0.1.jar -role node -hub http://selenium-hub:4444/grid/register -browser browserName=firefox
 
